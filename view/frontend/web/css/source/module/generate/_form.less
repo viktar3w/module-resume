@@ -1,0 +1,148 @@
+& when (@media-common = true) {
+ .resume-form {
+  max-width: 500px;
+
+  input, textarea {
+   &.error {
+    border-color: @error__color;
+   }
+  }
+
+  .error {
+   &:not(.input-text) {
+    color: @error__color
+   }
+  }
+
+  .main-wrapper {
+   .photo-wrapper {
+    display: flex;
+    align-items: center;
+
+    .label, .control {
+     padding-right: 15px;
+    }
+
+    .preview-image {
+     position: relative;
+
+     .delete-photo {
+      &:before {
+       font-family: monospace;
+       font-weight: 700;
+       cursor: pointer;
+       display: block;
+       content: "x";
+       width: 10px;
+       height: 10px;
+       position: absolute;
+       top: -15px;
+       right: -15px;
+      }
+     }
+    }
+
+    img#photo-preview {
+     max-width: 100px;
+     max-height: 100px;
+    }
+   }
+
+   .additional-links-wrapper {
+    .addition-link {
+     .control {
+      display: flex;
+      align-items: center;
+      justify-content: revert;
+     }
+    }
+   }
+  }
+
+  .template-wrapper {
+   .template {
+    .label {
+     padding-right: 10px;
+    }
+   }
+  }
+
+  .experiences-wrapper {
+   .skill-wrapper {
+    .skill {
+     display: flex;
+     justify-content: space-around;
+
+     input {
+      width: 60%;
+     }
+    }
+
+    .show-skills {
+     display: flex;
+     align-items: baseline;
+     justify-content: center;
+     flex-flow: wrap;
+     padding: 10px;
+
+     .additional-skill-wrapper {
+      padding: 10px;
+
+      .additional-skill {
+       display: inline-block;
+       position: relative;
+       border: 1px solid black;
+       border-radius: 10px;
+       padding: 10px;
+
+       .delete-skill {
+        background: #91bbe9;
+
+        &:before {
+         font-family: monospace;
+         font-weight: 700;
+         cursor: pointer;
+         display: block;
+         content: "x";
+         width: 10px;
+         height: 10px;
+         position: absolute;
+         top: -10px;
+         right: -7px;
+        }
+       }
+      }
+     }
+    }
+   }
+  }
+
+  td.delete-box {
+   width: 20px;
+   position: relative;
+   padding: 0;
+
+   .delete {
+    &:before {
+     display: inline-block;
+     font-family: 'luma-icons';
+     font-style: normal;
+     font-weight: 400;
+     font-variant: normal;
+     text-transform: none;
+     line-height: 1;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     content: '\e604';
+     font-size: 22px;
+     font-size: 2.2rem;
+     vertical-align: bottom;
+     position: absolute;
+     right: 0;
+     top: 15px;
+     color: #757575;
+    }
+   }
+  }
+ }
+}

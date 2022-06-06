@@ -1,0 +1,47 @@
+<!-- ko if: (show) -->
+<tr data-bind="afterRender: initCalendar">
+    <td>
+        <div class="field required">
+            <div class="control">
+                <input data-bind="attr: {id: 'company_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][company]'}"
+                       type="text"
+                       class="input-text required-entry validate-no-html-tags validate-length maximum-length-50" aria-required="true"/>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="field required">
+            <div class="control">
+                <input data-bind="attr: {id: 'position_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][position]'}"
+                       type="text"
+                       class="input-text required-entry validate-no-html-tags validate-length maximum-length-50"
+                       aria-required="true"/>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="field required">
+            <div class="control">
+                <textarea data-bind="attr: {id: 'responsibility_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][responsibility]'}"
+                          class="input-text required-entry validate-no-html-tags"
+                          aria-required="true"></textarea>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="field">
+            <div class="control">
+                <span data-bind="i18n: 'from'"/>
+                <input data-bind="attr: {id: 'from_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][from]'}"
+                       class="datepicker validate-date" type="text"/>
+                <span data-bind="i18n: 'to'"/>
+                <input data-bind="attr: {id: 'to_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][to]'}"
+                       class="datepicker validate-date" type="text"/>
+            </div>
+        </div>
+    </td>
+    <td class="delete-box">
+        <div class="action delete" data-bind="click: remove"></div>
+    </td>
+</tr>
+<!-- /ko -->

@@ -1,0 +1,23 @@
+<!-- ko if: (show) -->
+<tr>
+    <td>
+        <div>
+            <select data-bind="event: {change: enableLinkType}">
+                <option></option>
+                <!-- ko foreach: { data: Object.keys(addition_links), as: 'key' } -->
+                <option data-bind="value: $parent.addition_links[key], text: key"/>
+                <!-- /ko -->
+            </select>
+        </div>
+    </td>
+    <td>
+        <div>
+            <input type="text"
+                   data-bind="enable: enableUrl, attr: {id: 'addition_link_' + new Date().getTime(),name:'resume[additions]['+increment+'][link]'}, class: getClass()"/>
+        </div>
+    </td>
+    <td class="delete-box">
+        <div class="action delete" data-bind="click: remove"></div>
+    </td>
+</tr>
+<!-- /ko -->

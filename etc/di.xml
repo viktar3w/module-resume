@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="Victor3w\Resume\Api\GenerateInterface" type="Victor3w\Resume\Model\Generate"/>
+    <preference for="Victor3w\Resume\Api\Data\ResumeInterface" type="Victor3w\Resume\Model\Generate\Data\Resume"/>
+    <preference for="Victor3w\Resume\Api\Data\AdditionInterface" type="Victor3w\Resume\Model\Generate\Data\Addition"/>
+    <preference for="Victor3w\Resume\Api\Data\LanguageInterface" type="Victor3w\Resume\Model\Generate\Data\Language"/>
+    <preference for="Victor3w\Resume\Api\Data\ExperienceInterface" type="Victor3w\Resume\Model\Generate\Data\Experience"/>
+    <preference for="Victor3w\Resume\Api\Data\EducationInterface" type="Victor3w\Resume\Model\Generate\Data\Education"/>
+    <preference for="Victor3w\Resume\Api\Data\SkillInterface" type="Victor3w\Resume\Model\Generate\Data\Skill"/>
+    <preference for="Victor3w\Resume\Api\Data\FileInterface" type="Victor3w\Resume\Model\Generate\Data\Photo"/>
+    <preference for="Victor3w\Resume\Api\Data\ResponseGenerateInterface"
+                type="Victor3w\Resume\Model\Generate\Data\ResponseGenerateResume"/>
+    <type name="Victor3w\Resume\Model\Generate">
+        <arguments>
+            <argument name="generateInterface"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\ResumePostGenerate</argument>
+        </arguments>
+    </type>
+    <type name="Victor3w\Resume\Model\Generate\ResumePostGenerate">
+        <arguments>
+            <argument name="validator"
+                      xsi:type="object">Victor3w\Resume\Model\GeneratePostValidator</argument>
+            <argument name="filter"
+                      xsi:type="object">Victor3w\Resume\Model\GeneratePostFilter</argument>
+            <argument name="templates"
+                      xsi:type="array">
+                <item name="default"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Pdf\DefaultTemplate</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Victor3w\Resume\Model\GeneratePostValidator">
+        <arguments>
+            <argument name="validators" xsi:type="array">
+                <item name="requiredFields"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Validator\RequiredField</item>
+                <item name="fileFields"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Validator\FileField</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Victor3w\Resume\Model\GeneratePostFilter">
+        <arguments>
+            <argument name="filters" xsi:type="array">
+                <item name="string-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\StringField</item>
+                <item name="addition-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\AdditionField</item>
+                <item name="email-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\EmailField</item>
+                <item name="phone-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\PhoneField</item>
+                <item name="template-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\TemplateField</item>
+                <item name="date-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\DateField</item>
+                <item name="file-filter"
+                      xsi:type="object">Victor3w\Resume\Model\Generate\Filter\PhotoField</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Webapi\Validator\EntityArrayValidator">
+        <arguments>
+            <argument name="complexArrayItemLimit" xsi:type="number">999999</argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\Webapi\Validator\SearchCriteriaValidator">
+        <arguments>
+            <argument name="maximumPageSize" xsi:type="number">999999</argument>
+        </arguments>
+    </type>
+</config>

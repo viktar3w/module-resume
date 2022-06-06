@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="resume.generate.main" htmlTag="div" htmlClass="resume-generate-main" before="-">
+                <block class="Victor3w\Resume\Block\Generate\Index"
+                       template="Victor3w_Resume::generate/wrapper.phtml" name="content.resume.generate">
+                    <arguments>
+                        <argument name="jsLayout" xsi:type="array">
+                            <item name="components" xsi:type="array">
+                                <item name="resume_generate" xsi:type="array">
+                                    <item name="component" xsi:type="string">Victor3w_Resume/js/generate/form</item>
+                                    <item name="config" xsi:type="array">
+                                        <item name="template"
+                                              xsi:type="string">Victor3w_Resume/generate/form</item>
+                                        <item name="generateResumeUrl"
+                                              xsi:type="string">rest/V1/resume/generate</item>
+                                        <item name="customerUrl"
+                                              xsi:type="string">rest/V1/customers/me</item>
+                                    </item>
+                                    <item name="children" xsi:type="array">
+                                        <item name="template-fieldset" xsi:type="array">
+                                            <item name="component"
+                                                  xsi:type="string">Victor3w_Resume/js/generate/fieldset/template</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template"
+                                                      xsi:type="string">Victor3w_Resume/generate/fieldset/template</item>
+                                            </item>
+                                            <item name="children" xsi:type="array">
+                                                <item name="default-template" xsi:type="array">
+                                                    <item name="component"
+                                                          xsi:type="string">Victor3w_Resume/js/generate/fieldset/template/default</item>
+                                                    <item name="config" xsi:type="array">
+                                                        <item name="template"
+                                                              xsi:type="string">Victor3w_Resume/generate/fieldset/template/default</item>
+                                                        <item name="value"
+                                                              xsi:type="const">Victor3w\Resume\Api\Data\ResumeInterface::DEFAULT_TEMPLATE</item>
+                                                    </item>
+                                                </item>
+                                            </item>
+                                        </item>
+                                        <item name="main-fieldset" xsi:type="array">
+                                            <item name="component"
+                                                  xsi:type="string">Victor3w_Resume/js/generate/fieldset/main</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template"
+                                                      xsi:type="string">Victor3w_Resume/generate/fieldset/main</item>
+                                                <item name="addition_links" xsi:type="array">
+                                                    <item name="skype"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::SKYPE_TYPE</item>
+                                                    <item name="linkedin"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::LINKEDIN_TYPE</item>
+                                                    <item name="github"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::GITHUB_TYPE</item>
+                                                    <item name="gitlab"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::GITLAB_TYPE</item>
+                                                    <item name="dockerhub"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::DOCKERHUB_TYPE</item>
+                                                    <item name="other"
+                                                          xsi:type="const">Victor3w\Resume\Api\Data\AdditionInterface::OTHER_TYPE</item>
+                                                </item>
+                                                <item name="max_file_size"
+                                                      xsi:type="const">Victor3w\Resume\Model\Generate\Validator\FileField::MAX_FILE_SIZE</item>
+                                                <item name="fileTypes"
+                                                      xsi:type="const">Victor3w\Resume\Model\Generate\Validator\FileField::FILE_TYPES</item>
+                                            </item>
+                                        </item>
+                                        <item name="experience-fieldset" xsi:type="array">
+                                            <item name="component"
+                                                  xsi:type="string">Victor3w_Resume/js/generate/fieldset/experience</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template"
+                                                      xsi:type="string">Victor3w_Resume/generate/fieldset/experience</item>
+                                            </item>
+                                        </item>
+                                        <item name="education-fieldset" xsi:type="array">
+                                            <item name="component"
+                                                  xsi:type="string">Victor3w_Resume/js/generate/fieldset/education</item>
+                                            <item name="config" xsi:type="array">
+                                                <item name="template"
+                                                      xsi:type="string">Victor3w_Resume/generate/fieldset/education</item>
+                                            </item>
+                                        </item>
+                                    </item>
+                                </item>
+                            </item>
+                        </argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+    </body>
+</page>

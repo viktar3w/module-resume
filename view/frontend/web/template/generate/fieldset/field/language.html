@@ -1,0 +1,18 @@
+<!-- ko if: (show) -->
+<tr>
+    <td>
+        <div>
+            <input type="text" data-bind="event: {change: enableLanguageLevel}"/>
+        </div>
+    </td>
+    <td>
+        <div>
+            <input type="text"
+                   data-bind="enable: enableLevel, attr: {id: 'language_level_' + new Date().getTime(),name: 'resume[languages]['+increment+'][level]'}, class: getClass()"/>
+        </div>
+    </td>
+    <td class="delete-box">
+        <div class="action delete" data-bind="click: remove"></div>
+    </td>
+</tr>
+<!-- /ko -->

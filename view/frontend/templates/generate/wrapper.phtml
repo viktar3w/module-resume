@@ -1,0 +1,14 @@
+<?php
+/**@var Victor3w\Resume\Block\Generate\Index $block*/
+?>
+<div id="resume-generate-wrapper" data-bind="scope: 'resume_generate'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+<?= $block->getChildHtml() ?>
+<script type="text/x-magento-init">
+    {
+        "#resume-generate-wrapper": {
+            "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
+        }
+    }
+</script>

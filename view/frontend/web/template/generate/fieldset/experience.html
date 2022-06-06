@@ -1,0 +1,47 @@
+<fieldset class="fieldset experiences-wrapper">
+    <legend class="legend" data-bind="i18n: 'Experiences'" />
+    <div class="field skill-wrapper">
+        <label class="label" for="skill">
+            <span data-bind="i18n: 'Skill'"/>
+        </label>
+        <div class="control skill">
+            <input  id="skill" type="text"
+                    class="input-text validate-length maximum-length-50 validate-no-html-tags">
+            <button data-bind="i18n: 'Add Skill', event: {click: addSkill}"/>
+        </div>
+        <div class="show-skills">
+            <!-- ko foreach: skillBoxes -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!-- /ko-->
+        </div>
+    </div>
+    <div class="field required experience-wrapper">
+        <div class="experience">
+            <div class="control">
+                <table>
+                    <thead>
+                    <tr>
+                        <th data-bind="i18n: 'Company'"/>
+                        <th data-bind="i18n: 'Position'"/>
+                        <th data-bind="i18n: 'Responsibility'"/>
+                        <th data-bind="i18n: 'Period'"/>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <!-- ko foreach: experienceBoxes -->
+                        <!-- ko template: getTemplate() --><!-- /ko -->
+                        <!-- /ko-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="experience-button-wrapper">
+            <button class="action secondary" type="button" data-bind="
+                            click: addExperienceBox,
+                            attr: {title: $t('Add Experience')}">
+                <span data-bind="i18n: 'Add Experience'"/>
+            </button>
+        </div>
+    </div>
+</fieldset>

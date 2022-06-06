@@ -1,0 +1,42 @@
+{
+  "name": "viktar3w/module-resume",
+  "type": "magento2-module",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "description": "Module for generate CV PDF",
+  "keywords": [
+    "PDF",
+    "cv",
+    "resume",
+    "magento",
+    "magento-module",
+    "module"
+  ],
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Viktar Staravoitau",
+      "email": "12dodhe21@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~7.4.0",
+    "magento/framework": "103.0.*",
+    "tecnickcom/tcpdf": "^6.4"
+  },
+  "suggest": {
+    "magento/module-cookie": "100.4.*",
+    "magento/module-customer-sample-data": "Sample Data version: 100.4.*",
+    "magento/module-webapi": "100.4.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Victor3w\\Resume\\": ""
+    }
+  }
+}

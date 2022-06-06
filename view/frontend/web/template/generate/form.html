@@ -1,0 +1,9 @@
+<form name="resume-generate"
+      class="resume-form form" data-hasrequired="* Required Fields"
+      autocomplete="off">
+    <!-- ko foreach: elems() -->
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    <!-- /ko -->
+    <button type="submit" class="action submit primary"
+            data-bind="click: sendForm, i18n: 'Generate Form', enable: enableButton"/>
+</form>

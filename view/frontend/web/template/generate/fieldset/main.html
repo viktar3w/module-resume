@@ -1,0 +1,118 @@
+<fieldset class="fieldset main-wrapper">
+    <legend class="legend" data-bind="i18n: 'Main Data'" />
+    <div class="field photo-wrapper">
+        <label class="label" for="photo">
+            <span data-bind="i18n: 'Photo'"></span>
+        </label>
+        <div class="control">
+            <input id="photo" type="file" name="resume[photo]"
+                   data-bind="event:{change: doPreviewPhoto}, attr:{size: max_file_size, accept: getFileTypes()}"
+                   accept="image/png, image/jpeg, image/jpg">
+        </div>
+        <div class="preview-image" data-bind="visible: showPhoto">
+            <img id="photo-preview" data-bind="attr:{alt: $t('Photo Preview')}">
+            <span class="delete-photo" data-bind="event:{click: removePhoto}"></span>
+        </div>
+    </div>
+    <div class="field required firstname-wrapper">
+        <label class="label" for="firstname">
+            <span data-bind="i18n: 'Firstname'"></span>
+        </label>
+        <div class="control">
+            <input id="firstname" type="text" name="resume[firstname]" data-bind="value: customer.firstname || ''"
+                   class="input-text required-entry validate-no-html-tags maximum-length-60" aria-required="true">
+        </div>
+    </div>
+    <div class="field required lastname-wrapper">
+        <label class="label" for="lastname">
+            <span data-bind="i18n: 'Lastname'"/>
+        </label>
+        <div class="control">
+            <input  id="lastname" type="text" name="resume[lastname]" data-bind="value: customer.lastname || ''"
+                    class="input-text required-entry validate-no-html-tags maximum-length-60" aria-required="true">
+        </div>
+    </div>
+    <div class="field required email-wrapper">
+        <label class="label" for="email">
+            <span data-bind="i18n: 'Email'"/>
+        </label>
+        <div class="control">
+            <input  id="email" type="email" name="resume[email]" data-bind="value: customer.email || ''"
+                    class="input-text validate-email required-entry" aria-required="true">
+        </div>
+    </div>
+    <div class="field phone-wrapper">
+        <label class="label" for="phone">
+            <span data-bind="i18n: 'Phone'"/>
+        </label>
+        <div class="control">
+            <input  id="phone" type="text" name="resume[phone]" data-bind="value: customer.phone || ''"
+                    class="input-text validate-number validate-length maximum-length-18 minimum-length-7">
+        </div>
+    </div>
+    <div class="field location-wrapper">
+        <label class="label" for="location">
+            <span data-bind="i18n: 'Location'"/>
+        </label>
+        <div class="control">
+            <input  id="location" type="text" name="resume[location]"
+                    class="input-text validate-length maximum-length-50 validate-no-html-tags">
+        </div>
+    </div>
+    <div class="field additional-links-wrapper">
+        <legend class="legend" data-bind="i18n: 'Addition Links'"/>
+        <div class="addition-link">
+            <div class="control">
+                <table>
+                    <thead>
+                    <tr>
+                        <th data-bind="i18n: 'Addition Link Type'"/>
+                        <th data-bind="i18n: 'Addition Link'"/>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- ko foreach: linkBoxes -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="addition-button-wrapper">
+            <button class="action secondary" type="button" data-bind="
+                            click: addLinkBox,
+                            attr: {title: $t('Add Link')}">
+                <span data-bind="i18n: 'Add Link'"/>
+            </button>
+        </div>
+    </div>
+    <div class="field language-wrapper">
+        <legend class="legend" data-bind="i18n: 'Languages'"/>
+        <div class="languages">
+            <div class="control">
+                <table>
+                    <thead>
+                    <tr>
+                        <th data-bind="i18n: 'Language'"/>
+                        <th data-bind="i18n: 'Level'"/>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- ko foreach: languageBoxes -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="addition-button-wrapper">
+            <button class="action secondary" type="button" data-bind="
+                            click: addLanguageBox,
+                            attr: {title: $t('Add Language')}">
+                <span data-bind="i18n: 'Add Language'"/>
+            </button>
+        </div>
+    </div>
+</fieldset>

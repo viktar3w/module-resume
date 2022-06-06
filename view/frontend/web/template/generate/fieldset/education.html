@@ -1,0 +1,31 @@
+<fieldset class="fieldset education-wrapper">
+    <legend class="legend" data-bind="i18n: 'Education'" />
+    <div class="field required education-wrapper">
+        <div class="education">
+            <div class="control">
+                <table>
+                    <thead>
+                    <tr>
+                        <th data-bind="i18n: 'Educational Institution'"/>
+                        <th data-bind="i18n: 'Responsibility'"/>
+                        <th data-bind="i18n: 'Period'"/>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!-- ko foreach: educationBoxes -->
+                    <!-- ko template: getTemplate() --><!-- /ko -->
+                    <!-- /ko-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="education-button-wrapper">
+            <button class="action secondary" type="button" data-bind="
+                            click: addEducationBox,
+                            attr: {title: $t('Add Education')}">
+                <span data-bind="i18n: 'Add Education'"/>
+            </button>
+        </div>
+    </div>
+</fieldset>

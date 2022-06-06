@@ -1,0 +1,37 @@
+<!-- ko if: (show) -->
+<tr data-bind="afterRender: initCalendar">
+    <td>
+        <div class="field">
+            <div class="control">
+                <input data-bind="attr: {id: 'institution_' + new Date().getTime(), name: 'resume[education]['+increment+'][institution]'}"
+                       type="text"
+                       class="input-text validate-no-html-tags validate-length maximum-length-50"
+                       aria-required="true"/>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="field">
+            <div class="control">
+                <textarea data-bind="attr: {id: 'responsibility_' + new Date().getTime(),name: 'resume[education]['+increment+'][responsibility]'}"
+                       class="input-text validate-no-html-tags"></textarea>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="field">
+            <div class="control">
+                <span data-bind="i18n: 'from'"/>
+                <input data-bind="attr: {id: 'education_from_' + new Date().getTime(),name: 'resume[education]['+increment+'][from]'}"
+                       class="datepicker validate-date" type="text"/>
+                <span data-bind="i18n: 'to'"/>
+                <input data-bind="attr: {id: 'education_to_' + new Date().getTime(),name: 'resume[education]['+increment+'][to]'}"
+                       class="datepicker validate-date" type="text"/>
+            </div>
+        </div>
+    </td>
+    <td class="delete-box">
+        <div class="action delete" data-bind="click: remove"></div>
+    </td>
+</tr>
+<!-- /ko -->
