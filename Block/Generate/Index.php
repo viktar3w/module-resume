@@ -14,26 +14,29 @@ use Magento\Framework\View\Element\Template;
 class Index extends Template
 {
     /**
-     * @return string
-     */
-    public function getDefaultLogoUrl()
-    {
-        return $this->_assetRepo->getUrlWithParams(
-            GenerateInterface::DEFAULT_LOGO,
-            [
-                '_secure' => $this->_request->isSecure(),
-                'area' => 'frontend'
-            ]
-        );
-    }
-
-    /**
      * @inheritDoc
      */
     public function getJsLayout()
     {
         if ($this->jsLayout) {
-            $this->jsLayout['components']['resume_generate']['config']['defaultLogo'] = $this->getDefaultLogoUrl();
+            $defaultLogo = [
+                'path' => $this->_assetRepo
+                    ->getUrlWithParams(
+                        '',
+                        [
+                            '_secure' => $this->_request->isSecure(),
+                            'area' => 'frontend'
+                        ]
+                    ),
+                'logo' => GenerateInterface::DEFAULT_LOGO,
+                'linkedin' => GenerateInterface::LINKEDIN_LOGO,
+                'github' => GenerateInterface::GITHUB_LOGO,
+                'addition' => GenerateInterface::ADDITION_LINK_LOGO,
+                'phone' => GenerateInterface::PHONE_LOGO,
+                'email' => GenerateInterface::EMAIL_LOGO,
+                'address' => GenerateInterface::ADDRESS_LOGO,
+            ];
+            $this->jsLayout['components']['resume_generate']['config']['defaultLogo'] = $defaultLogo;
         }
         return parent::getJsLayout();
     }

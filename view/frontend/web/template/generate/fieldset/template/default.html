@@ -6,4 +6,133 @@
         <input id="default" type="checkbox" name="resume[template]" data-bind="value: value"
                class="checkbox required-entry" aria-required="true">
     </div>
+    <div class="preview">
+        <span data-bind="event: {click: showPdf}, i18n: 'Show Preview PDF'"/>
+    </div>
+</div>
+<div id="default-template-modal" style="display: none">
+    <div class="left-part">
+        <div class="logo-wrapper">
+            <img data-bind="attr:{src: defaultLogo.path + '/' + defaultLogo.logo, alt: $t('Resume Logo')}" />
+        </div>
+        <div class="pl-10 contact-wrapper">
+            <div class="phone df">
+                <img data-bind="attr:{src: defaultLogo.path + '/' + defaultLogo.phone, alt: $t('Phone')}"/>
+                <span>+123456789</span>
+            </div>
+            <div class="email df">
+                <img data-bind="attr:{src: defaultLogo.path + '/' + defaultLogo.email, alt: $t('Email')}"/>
+                <span>test@test.com</span>
+            </div>
+            <div class="location df">
+                <img data-bind="attr:{src: defaultLogo.path + '/' + defaultLogo.address, alt: $t('Location')}"/>
+                <span data-bind="i18n: 'New York, USA'" />
+            </div>
+        </div>
+        <div class="pl-10 skill-wrapper">
+            <div class="title">
+                <h4 data-bind="i18n: 'Skills'"/>
+            </div>
+            <p data-bind="i18n: 'php, js, vue js, mysql, docker, ubuntu, react'"/>
+        </div>
+        <div class="pl-10 language-wrapper">
+            <div class="title">
+                <h4 data-bind="i18n: 'Languages'"/>
+            </div>
+            <p data-bind="i18n: 'english - native, french - native'"/>
+        </div>
+    </div>
+    <div class="right-part">
+        <div class="name-wrapper">
+            <h1 class="title"><strong data-bind="i18n: 'John Smith'"/></h1>
+        </div>
+        <div class="experience-wrapper">
+            <div class="title">
+                <h4 data-bind="i18n: 'Experiences'"/>
+            </div>
+            <div class="pl-10 items">
+                <div class="item">
+                    <div class="header">
+                        <div class="date"><i data-bind="i18n: '2019-11-06 - now'"/></div>
+                        <div class="name"><span data-bind="i18n: 'Apple'" /></div>
+                        <div class="type"><span data-bind="i18n: 'Web designer'" /></div>
+                    </div>
+                    <div class="content">
+                        <span data-bind="i18n: 'UX designer'"/><br>
+                        <span data-bind="i18n: 'Applications developer'"/><br>
+                        <span data-bind="i18n: 'Multimedia programmer'"/><br>
+                        <span data-bind="i18n: 'Web content manager'"/><br>
+                        <span data-bind="i18n: 'Multimedia specialist'"/><br>
+                        <span data-bind="i18n: 'SEO specialist'"/><br>
+                        <span data-bind="i18n: 'UX researcher'"/><br>
+                        <span data-bind="i18n: 'Web developer'"/>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="header">
+                        <div class="date"><i data-bind="i18n: '2017-11-06 - 2019-11-06'"/></div>
+                        <div class="name"><span data-bind="i18n: 'Apple Two'" /></div>
+                        <div class="type"><span data-bind="i18n: 'Web designer'" /></div>
+                    </div>
+                    <div class="content">
+                        <span data-bind="i18n: 'UX designer'"/><br>
+                        <span data-bind="i18n: 'Applications developer'"/><br>
+                        <span data-bind="i18n: 'Multimedia programmer'"/><br>
+                        <span data-bind="i18n: 'Web content manager'"/><br>
+                        <span data-bind="i18n: 'Multimedia specialist'"/><br>
+                        <span data-bind="i18n: 'SEO specialist'"/><br>
+                        <span data-bind="i18n: 'UX researcher'"/><br>
+                        <span data-bind="i18n: 'Web developer'"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="education-wrapper">
+            <div class="title">
+                <h4 data-bind="i18n: 'Education'"/>
+            </div>
+            <div class="pl-10 items">
+                <div class="item">
+                    <div class="header">
+                        <div class="date"><i data-bind="i18n: '2013-10-01 - 2017-08-06'"/></div>
+                        <div class="name"><span data-bind="i18n: 'Technology University'" /></div>
+                    </div>
+                    <div class="content">
+                        <span data-bind="i18n: 'Representatives of science and business from Poland and abroad will meet to discuss current technological challenges'"/><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="addition-link-wrapper">
+            <div class="title">
+                <h4 data-bind="i18n: 'Addition Links'"/>
+            </div>
+            <div class="pl-10 items">
+                <div class="item addition-link">
+                    <div class="link-type">
+                        <img data-bind="attr: {src: defaultLogo.path + '/' + defaultLogo.linkedin, alt: $t('Linkedin')}">
+                    </div>
+                    <div class="link">
+                        <span>https://www.linkedin.com/in/test-test423423423</span>
+                    </div>
+                </div>
+                <div class="item addition-link">
+                    <div class="link-type">
+                        <img data-bind="attr: {src: defaultLogo.path + '/' + defaultLogo.github, alt: $t('Github')}">
+                    </div>
+                    <div class="link">
+                        <span>https://github.com/sdfsdf/sdfsdf/sdfsdfsdfsdf/sdfsdf</span>
+                    </div>
+                </div>
+                <div class="item addition-link">
+                    <div class="link-type">
+                        <img data-bind="attr: {src: defaultLogo.path + '/' + defaultLogo.addition, alt: $t('Addition')}">
+                    </div>
+                    <div class="link">
+                        <span>https://packagist.org/sdfsdfsdf/sdfsdfsdf</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

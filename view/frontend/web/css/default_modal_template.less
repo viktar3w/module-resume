@@ -1,0 +1,150 @@
+@grey-background: rgba(201, 201, 201, 0.5);
+@grey-color: rgba(201, 201, 201, 1);
+.modal-content {
+ margin: auto;
+
+ #default-template-modal {
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  height: 1000px;
+  width: 750px;
+
+  .left-part {
+   width: 30%;
+   height: 100%;
+   background: @grey-background;
+
+   .logo-wrapper {
+    padding-top: 30px;
+    width: 80%;
+    margin: auto;
+   }
+   .contact-wrapper {
+    padding-top: 20px;
+    font-size: 10px;
+   }
+   .skill-wrapper {
+    h4 {
+     &:before {
+      left: 65px;
+     }
+     &:after {
+      right: 65px;
+     }
+    }
+   }
+   .language-wrapper {
+    h4 {
+     &:before {
+      left: 48px;
+     }
+     &:after {
+      right: 48px;
+     }
+    }
+   }
+   p {
+    text-align: center;
+   }
+  }
+  .right-part {
+   width: 70%;
+   height: 100%;
+   .name-wrapper {
+    padding-top: 40px;
+    h1 {
+     text-align: center;
+    }
+   }
+   .experience-wrapper {
+    h4 {
+     &:before {
+      left: 195px;
+     }
+     &:after {
+      right: 195px;
+     }
+    }
+   }
+   .education-wrapper {
+    h4 {
+     &:before {
+      left: 205px;
+     }
+     &:after {
+      right: 205px;
+     }
+    }
+    .header {
+     .name {
+      border-right: unset;
+     }
+    }
+   }
+   .addition-link-wrapper {
+    h4 {
+     &:before {
+      left: 192px;
+     }
+     &:after {
+      right: 192px;
+     }
+    }
+    .item {
+     display: flex;
+     .link-type {
+      padding-right: 15px;
+      img {
+       width: 16px;
+      }
+     }
+     .link {
+      padding-bottom: 20px;
+     }
+    }
+   }
+   .content {
+    padding: 20px 0 20px 0;
+   }
+  }
+  .pl-10 {
+   padding-left: 10px;
+  }
+  .title {
+   position: relative;
+   h4, h1 {
+    text-align: center;
+   }
+   h4 {
+    &:before, &:after {
+     content: '—';
+     position: absolute;
+     color: @grey-color;
+     top: 0;
+    }
+   }
+  }
+  .header {
+   display: flex;
+   font-size: 10px;
+   .name {
+    width: 45%;
+    text-align: right;
+    border-right: 1px solid @grey-color;
+    padding-right: 5px;
+   }
+   .type {
+    padding-left: 5px;
+   }
+  }
+  .df {
+   display: flex;
+   img {
+    padding-right: 10px;
+    width: 10px;
+    height: 10px;
+   }
+  }
+ }
+}

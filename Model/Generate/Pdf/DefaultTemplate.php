@@ -298,6 +298,9 @@ class DefaultTemplate extends CommonTemplate
      */
     protected function addEducation()
     {
+        if (!$this->resume->getEducation()) {
+            return $this->pdf;
+        }
         $lineX = ($this->getRightWidth()) - (($this->getRightWidth() / 2) - 40);
         $this->addTitleOnRightPart('Education', $lineX, 35);
         foreach ($this->resume->getEducation() as $education) {

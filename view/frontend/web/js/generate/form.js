@@ -18,7 +18,7 @@ define([
       addition_links: [],
       customer: {},
       enableButton: true,
-      defaultLogo: '',
+      defaultLogo: {},
       tracks: {
         customer: true,
         enableButton: true,
@@ -77,7 +77,7 @@ define([
           }
         }
         self.enableButton = true
-        // form[0].reset();
+        form[0].reset();
       }).catch(function (err) {
         console.error(err)
         self.enableButton = true
