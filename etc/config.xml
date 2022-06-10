@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <csp>
+            <policies>
+                <storefront>
+                    <images>
+                        <policy_id>img-src</policy_id>
+                        <self>1</self>
+                        <inline>1</inline>
+                        <eval>0</eval>
+                        <dynamic>0</dynamic>
+                        <schemes>
+                            <data>data</data>
+                            <blob>blob</blob>
+                        </schemes>
+                    </images>
+                </storefront>
+            </policies>
+        </csp>
+    </default>
+</config>

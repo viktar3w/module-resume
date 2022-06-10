@@ -7,5 +7,10 @@
                 <value id="worker-blob" type="host">blob:</value>
             </values>
         </policy>
+        <policy id="img-src">
+            <values>
+                <value id="img-blob" type="host">blob:</value>
+            </values>
+        </policy>
     </policies>
 </csp_whitelist>

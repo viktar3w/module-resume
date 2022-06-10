@@ -63,7 +63,6 @@ define([
     },
     removePhoto: function () {
       const photo = document.getElementById('photo')
-      console.log(photo)
       if (photo) {
         photo.value = ''
       }
