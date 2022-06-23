@@ -5,7 +5,7 @@
             <div class="control">
                 <input data-bind="attr: {id: 'company_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][company]'}"
                        type="text"
-                       class="input-text required-entry validate-no-html-tags validate-length maximum-length-50" aria-required="true"/>
+                       class="input-text required-entry validate-no-html-tags validate-length maximum-length-50" aria-required="true">
             </div>
         </div>
     </td>
@@ -15,7 +15,7 @@
                 <input data-bind="attr: {id: 'position_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][position]'}"
                        type="text"
                        class="input-text required-entry validate-no-html-tags validate-length maximum-length-50"
-                       aria-required="true"/>
+                       aria-required="true">
             </div>
         </div>
     </td>
@@ -31,12 +31,12 @@
     <td>
         <div class="field">
             <div class="control">
-                <span data-bind="i18n: 'from'"/>
+                <span data-bind="i18n: 'from'"></span>
                 <input data-bind="attr: {id: 'from_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][from]'}"
-                       class="datepicker validate-date" type="text"/>
-                <span data-bind="i18n: 'to'"/>
+                       class="datepicker validate-date" type="text">
+                <span data-bind="i18n: 'to'"></span>
                 <input data-bind="attr: {id: 'to_' + new Date().getTime(),name: 'resume[experiences]['+increment+'][to]'}"
-                       class="datepicker validate-date" type="text"/>
+                       class="datepicker validate-date" type="text">
             </div>
         </div>
     </td>

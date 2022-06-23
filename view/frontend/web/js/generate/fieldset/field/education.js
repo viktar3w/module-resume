@@ -2,7 +2,7 @@ define([
   "jquery",
   "Victor3w_Resume/js/generate/fieldset/field/common-field",
   "mage/translate",
-  "mage/calendar"
+  "jquery-ui-modules/datepicker"
 ], function ($, Component, $t) {
   "use strict"
   return Component.extend({
@@ -10,8 +10,8 @@ define([
       template: 'Victor3w_Resume/generate/fieldset/field/education'
     },
     initCalendar: function () {
-      $('.datepicker').live('focus', function () {
-        $(this).datepicker({
+      $(document).ready(function () {
+        $('.datepicker').datepicker({
           changeMonth: true,
           changeYear: true,
           showButtonPanel: true,

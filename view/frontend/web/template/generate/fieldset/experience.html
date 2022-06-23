@@ -1,13 +1,13 @@
 <fieldset class="fieldset experiences-wrapper">
-    <legend class="legend" data-bind="i18n: 'Experiences'" />
+    <legend class="legend" data-bind="i18n: 'Experiences'"></legend>
     <div class="field skill-wrapper">
         <label class="label" for="skill">
-            <span data-bind="i18n: 'Skill'"/>
+            <span data-bind="i18n: 'Skill'"></span>
         </label>
         <div class="control skill">
             <input  id="skill" type="text"
                     class="input-text validate-length maximum-length-50 validate-no-html-tags">
-            <button data-bind="i18n: 'Add Skill', event: {click: addSkill}"/>
+            <button data-bind="i18n: 'Add Skill', event: {click: addSkill}"></button>
         </div>
         <div class="show-skills">
             <!-- ko foreach: skillBoxes -->
@@ -21,10 +21,10 @@
                 <table>
                     <thead>
                     <tr>
-                        <th data-bind="i18n: 'Company'"/>
-                        <th data-bind="i18n: 'Position'"/>
-                        <th data-bind="i18n: 'Responsibility'"/>
-                        <th data-bind="i18n: 'Period'"/>
+                        <th data-bind="i18n: 'Company'"></th>
+                        <th data-bind="i18n: 'Position'"></th>
+                        <th data-bind="i18n: 'Responsibility'"></th>
+                        <th data-bind="i18n: 'Period'"></th>
                         <th></th>
                     </tr>
                     </thead>
@@ -40,7 +40,7 @@
             <button class="action secondary" type="button" data-bind="
                             click: addExperienceBox,
                             attr: {title: $t('Add Experience')}">
-                <span data-bind="i18n: 'Add Experience'"/>
+                <span data-bind="i18n: 'Add Experience'"></span>
             </button>
         </div>
     </div>

@@ -6,7 +6,7 @@
                 <input data-bind="attr: {id: 'institution_' + new Date().getTime(), name: 'resume[education]['+increment+'][institution]'}"
                        type="text"
                        class="input-text validate-no-html-tags validate-length maximum-length-50"
-                       aria-required="true"/>
+                       aria-required="true">
             </div>
         </div>
     </td>
@@ -21,12 +21,12 @@
     <td>
         <div class="field">
             <div class="control">
-                <span data-bind="i18n: 'from'"/>
+                <span data-bind="i18n: 'from'"></span>
                 <input data-bind="attr: {id: 'education_from_' + new Date().getTime(),name: 'resume[education]['+increment+'][from]'}"
-                       class="datepicker validate-date" type="text"/>
-                <span data-bind="i18n: 'to'"/>
+                       class="datepicker validate-date" type="text">
+                <span data-bind="i18n: 'to'"></span>
                 <input data-bind="attr: {id: 'education_to_' + new Date().getTime(),name: 'resume[education]['+increment+'][to]'}"
-                       class="datepicker validate-date" type="text"/>
+                       class="datepicker validate-date" type="text">
             </div>
         </div>
     </td>
