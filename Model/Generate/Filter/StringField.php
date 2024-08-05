@@ -19,7 +19,7 @@ class StringField implements FilterInterface
     public function filter(ResumeInterface $resume): void
     {
         $filter = static function (string $field): string {
-            return trim(filter_var(htmlspecialchars($field), FILTER_SANITIZE_STRING));
+            return trim(filter_var(htmlspecialchars($field)));
         };
         $resume->setFirstname($filter($resume->getFirstname()));
         $resume->setLastname($filter($resume->getLastname()));
